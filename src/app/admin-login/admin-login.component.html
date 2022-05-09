@@ -1,0 +1,19 @@
+
+  
+<div class="boder bg-secondary text-white w-25 p-5">
+    <form  #userForm="ngForm">
+     
+            <label>Name</label>
+            <input type="text" #username="ngModel" class="form-control" [class.is-invalid]="username.invalid && username.touched" name="username" [(ngModel)]="name" required> 
+            <small class="text-danger" [class.d-none]="username.valid || username.untouched">Name is required</small>
+            <br><br>
+
+              <label>password</label>
+              <input type="password" #password="ngModel" pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" class="form-control" required
+              [class.is-invalid]="password.invalid && password.touched"  name="password" [(ngModel)]="password1" >
+              <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required</small>
+              <br><br>
+        <button [disabled]="userForm.form.invalid" (click)="adminLog()">Login</button>
+    </form>
+   </div>
+
