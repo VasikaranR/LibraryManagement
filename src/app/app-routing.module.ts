@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AddBookComponent } from './add-book/add-book.component';
 import { BuyComponent } from './buy/buy.component';
 import { LibraryDashComponent } from './library-dash/library-dash.component';
 import { LoginComponent } from './login/login.component';
@@ -11,10 +11,10 @@ const routes: Routes = [
  {path:'login',component:LoginComponent},
  {path:'dashboard',component:LibraryDashComponent},
  {path:'user',component:UserComponent},
- {path:'admin',component:AdminLoginComponent},
- {path:'buy',component:BuyComponent}
+ {path:'buy',component:BuyComponent},
+ {path:'addbook',component:AddBookComponent}
 
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

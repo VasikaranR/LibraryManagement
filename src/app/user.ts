@@ -3,5 +3,4 @@ export interface User{
     name:string;
     category:string;
     author:string;
-    
 }
