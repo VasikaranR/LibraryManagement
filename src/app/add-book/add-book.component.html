@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="userform">
+    <form [formGroup]="formvalid">
         <div>
             <label for="book_id"><b>BookID</b></label>
             <div>
@@ -30,9 +30,11 @@
         <div class="mb-1">
             <div class="btn-group" role="group">
                 <!-- <button class="btn btn-info" [routerLink]="['/user']">Back</button> -->
-                <button (click)="save()" [disabled]="userform.invalid" class="btn btn-primary" type="button">
+                <!-- <button (click)="save()" [disabled]="formvalid.invalid" class="btn btn-primary" type="button">
                     {{id==0 || id==null ?'Save':'Update'}}</button>
-                <button class="btn btn-secondary" (click)="resetValues()" type="button">Reset </button>
+                <button class="btn btn-secondary" (click)="resetValues()" type="button">Reset </button> -->
+                <button (click)="save()" class="btn btn-primary" type="button"> Save</button>   
+
             </div>
         </div>
 

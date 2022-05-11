@@ -31,6 +31,8 @@ export class LibraryDashComponent implements OnInit {
     this.router.navigate(['/buy']);
   }
   add(){
+    
+    this.router.navigate(['/addbook']);
 
   }
   edit(){
