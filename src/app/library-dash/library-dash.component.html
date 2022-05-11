@@ -1,23 +1,9 @@
-
 <nav class="navbar navbar-light bg-primary">
   <div class="container-fluid">
-    <h2>Library Management App</h2>
-  
-
-</div>
-
-
+    <p>DashBoard</p>
+    <button (click)="logout()" id="logout" class="btn  btn-danger">Logout</button>
+  </div>
 </nav>
-<!--jumbotron-->
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-    <h1 class="display-5 fw-bold">Welcome to the Library</h1>
-     <p class="col-md-8 fs-4">you can save the books using angular</p>
-     <a class="btn btn-primary btn-lg" target="_blank"type="button" href="https://angular.io/">learn more</a>
-    </div>
-   </div>
-<!--close jumbotron-->
-<!-- table here-->
 <table class="table mt-4">
   <thead>
       <tr>
@@ -30,8 +16,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of userList">
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
+        <td>{{user.bookId}}</td>
+        <td>{{user.bookname}}</td>
         <td>{{user.category}}</td>
         <td>{{user.author}}</td>
        <p *ngIf="roleName=='user' else elsecase">
@@ -42,8 +28,9 @@
       </p>
       <ng-template #elsecase>
         <td>
-        <button (click)="edit()" class="btn btn-warning">Edit</button>&nbsp;
-        <button (click)="deleteBook()" class="btn btn-danger">Delete</button>&nbsp;
+        <!-- <button (click)="edit(user.id)" class="btn btn-warning">Edit</button>&nbsp; -->
+        <button class="btn btn-warning" [routerLink]="['/update-addbook',user.id]">Edit</button>&nbsp;
+        <button (click)="deleteBook(user.id)" class="btn btn-danger">Delete</button>&nbsp;
       </td>
       </ng-template>
         
@@ -54,8 +41,7 @@
   </tbody>
 
 </table>
-<div>
+<p *ngIf="roleName=='admin'">
   <button (click)="add()" class="btn btn-primary">Add</button>&nbsp;
-</div>
+</p>
 
-{{roleName}}

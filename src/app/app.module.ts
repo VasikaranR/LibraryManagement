@@ -10,7 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { BuyComponent } from './buy/buy.component';
 import { AddBookComponent } from './add-book/add-book.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,7 @@ import { AddBookComponent } from './add-book/add-book.component';
     LoginComponent,
     UserComponent,
     BuyComponent,
-    AddBookComponent
+    AddBookComponent,
   ],
   imports: [
     BrowserModule,

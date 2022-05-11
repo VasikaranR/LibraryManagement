@@ -1,6 +1,7 @@
 export interface User{
     id:number;
-    name:string;
+    bookId:number;
+    bookname:string;
     category:string;
     author:string;
 }

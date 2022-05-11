@@ -22,7 +22,8 @@ export class AddBookComponent implements OnInit {
       bookname: ['', [Validators.required]],
       author: ['', [Validators.required]],
       category:['',[Validators.required]],
-      book_id: [0, [Validators.required]],
+      bookId: ['', [Validators.required]],
+      id:[0,[Validators.required]]
     });
 
   }
@@ -41,15 +42,15 @@ export class AddBookComponent implements OnInit {
   }
   save() {
    
-    // if (this.formvalid.get('id')?.value === 0) {
-    //   //Create New User
-    //   this.userService.addUser(this.formvalid.value);
-    //   console.log("details: "+this.formvalid.value)
-    // } else {
-    //   //Update User info
-      this.userService.updateUser(this.formvalid.value);
+    if (this.formvalid.get('id')?.value === 0) {
+      //Create New User
+      this.userService.addUser(this.formvalid.value);
       console.log("details: "+this.formvalid.value)
-    // }
+    } else {
+      //Update User info
+      this.userService.updateUser(this.formvalid.value);
+      console.log("details: "+JSON.stringify(this.formvalid.value))
+    }
 
     //Redirecting to table
     this.router.navigate(['/dashboard']);
